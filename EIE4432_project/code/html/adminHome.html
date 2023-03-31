@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <script src="../js/cookie.js"></script>
+    <script>
+        window.onload = function() {
+            checkCookie();
+            user = "Hi " + getCookie("user") + "!";
+            document.getElementById("sayHi").innerHTML = user;
+            document.getElementById("username").innerHTML = getCookie("user");
+        }
+    </script>
+</head>
+<body>
+    <div class="bar">
+        <ul>
+            <li><a class="active" href="adminHome.html">Home</a></li>
+            <li style="float:right"><a href="../php/logout.php">Logout</a></li>
+            <li style="float:right"><a id="username">User</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 px-0 d-none d-sm-block">
+                    <img src="../images/admin.png" alt="admin image" class="login-img">
+                </div>
+                <div class="col-sm-6 login-section-wrapper">
+                    <div class="login-wrapper my-auto">
+                        <h1 id="sayHi" class="login-title"></h1>
+                        <h1 class="login-title" id="sayHi"></h1>
+                        <a href="../php/userlist.php"><input type="button" class="btn btn-block login-btn" value="View Registered Users"></a>
+                        <a href="../php/viewPNotice.php"><input type="button" class="btn btn-block login-btn" value="View Pending Notices"></a>
+                        <a href="../php/viewCNotice.php"><input type="button" class="btn btn-block login-btn" value="View Completed Notices"></a>
+                        <a href="../php/adminChart.php"><input type="button" class="btn btn-block login-btn" value="System Statistics"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
